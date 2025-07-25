@@ -8,9 +8,12 @@ A modern starter template for building web apps with:
 - [Lucide icons](https://lucide.dev/) (icon set)
 - [Vite](https://vitejs.dev/) (fast dev/build tool)
 
+<img width="1181" height="1056" alt="Screenshot 2025-07-25 at 12 10 44 PM" src="https://github.com/user-attachments/assets/8020bc04-8070-46ca-a4bc-bbd424558fa2" />
+<img width="1181" height="1056" alt="Screenshot 2025-07-25 at 12 10 51 PM" src="https://github.com/user-attachments/assets/68e44b67-565c-4cb3-bfba-1a995a239151" />
+
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 1. **Install dependencies:**
    ```sh
@@ -24,7 +27,7 @@ A modern starter template for building web apps with:
 
 ---
 
-## 🗂️ Project Structure & Key Files
+## Project Structure & Key Files
 
 - `app/root.tsx` – Main app shell (theming, layout, global logic)
 - `app/routes/_index.tsx` – Home page route (edit this for your landing page)
@@ -37,7 +40,7 @@ A modern starter template for building web apps with:
 
 ---
 
-## 🎨 Styling & Theming
+## Styling & Theming
 
 - Uses Tailwind CSS with a sensible default config
 - Supports light/dark mode out of the box (see `root.tsx` and theme logic)
@@ -46,7 +49,7 @@ A modern starter template for building web apps with:
 
 ---
 
-## 🛠️ Extending This Boilerplate
+## Extending This Boilerplate
 
 - Add new routes in `app/routes/`
 - Add or customize UI components in `app/components/`
@@ -55,7 +58,7 @@ A modern starter template for building web apps with:
 
 ---
 
-## 🏗️ Build & Deploy
+## Build & Deploy
 
 1. **Build for production:**
    ```sh
@@ -70,7 +73,7 @@ You can deploy the output on any Node.js host, or use platforms like Vercel, Net
 
 ---
 
-## 📚 Resources
+## Resources
 
 - [Remix Docs](https://remix.run/docs)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
