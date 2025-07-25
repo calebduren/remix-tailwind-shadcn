@@ -1,7 +1,8 @@
 /**
- * By default, Remix will handle generating the HTTP Response for you.
- * You are free to delete this file if you'd like to, but if you ever want it revealed again, you can run `npx remix reveal` ✨
- * For more information, see https://remix.run/file-conventions/entry.server
+ * entry.server.tsx: Handles server-side rendering (SSR) for your Remix app.
+ * You can customize how HTML is generated and streamed to the client.
+ * Most users can leave this file as-is, but you can extend it for advanced use cases (e.g., custom headers, error handling, streaming, etc).
+ * For more info: https://remix.run/file-conventions/entry.server
  */
 
 import { PassThrough } from "node:stream";

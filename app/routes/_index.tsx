@@ -1,8 +1,13 @@
+// _index.tsx: Main landing page route for the app ("/").
+// Edit this file to customize your project's homepage.
+// Uses Remix, Tailwind CSS, Shadcn UI, and Lucide icons as examples.
+
 import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { Button } from "../components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
+// meta(): Sets <title> and <meta> tags for SEO and sharing.
 export const meta: MetaFunction = () => {
   return [
     { title: "Remix, Tailwind, and Shadcn Boilerplate" },

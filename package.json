@@ -1,6 +1,6 @@
 {
   "name": "remix-tailwind-shadcn",
-  "private": true,
+  "private": false,
   "sideEffects": false,
   "type": "module",
   "scripts": {
