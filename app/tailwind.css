@@ -39,6 +39,21 @@
     styles to the same place as @tailwind utilities to avoid 
     unintended specificity issues.
   */
+
+  /*
+    These are utilities that I like to use that allows the h-screen and 
+    min-h-screen classes to work better on mobile devices. You can delete 
+    this if you don't want it.
+  */
+  .h-screen {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
 }
 
 @layer components {
