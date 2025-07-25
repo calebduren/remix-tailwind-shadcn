@@ -2,16 +2,15 @@
 // This is the entry point for all routes and shared logic. Edit this file to customize your app's shell.
 
 import {
-  Links,           // Injects <link> tags (e.g., stylesheets, fonts)
-  Meta,            // Injects <meta> tags (SEO, viewport, etc.)
-  Outlet,          // Renders the matched child route
-  Scripts,         // Injects Remix's JS bundle
+  Links, // Injects <link> tags (e.g., stylesheets, fonts)
+  Meta, // Injects <meta> tags (SEO, viewport, etc.)
+  Outlet, // Renders the matched child route
+  Scripts, // Injects Remix's JS bundle
   ScrollRestoration, // Handles scroll position on navigation
-  useLoaderData,   // Accesses loader data from server
+  useLoaderData, // Accesses loader data from server
 } from "@remix-run/react";
-import { json, type LoaderFunctionArgs , LinksFunction } from "@remix-run/node";
+import { json, type LoaderFunctionArgs, LinksFunction } from "@remix-run/node";
 import { useEffect, useState } from "react";
-
 
 import "./tailwind.css"; // Import global Tailwind styles
 
@@ -22,7 +21,7 @@ export const links: LinksFunction = () => [
 
 // loader(): Runs on server before rendering. Used here to SSR the user's theme preference from cookies.
 // You can extend this loader to provide other global data to your app shell.
-export { loader } from "./root.loader";
+import { loader } from "./root.loader";
 
 // ThemeScript: Injects a script that sets the initial theme (dark/light) before React hydration.
 // This prevents a flash of incorrect theme (FOUC) on first load.
@@ -51,7 +50,8 @@ function ThemeScript() {
 // App: Main app component. Wraps all routes. Handles theme logic and layout wrappers.
 export default function App() {
   // initialTheme is loaded via SSR for correct first paint
-  const { initialTheme } = useLoaderData<typeof loader>();
+  const data = useLoaderData<typeof loader>() ?? { initialTheme: null };
+  const initialTheme = data.initialTheme;
   const [theme, setTheme] = useState<string | null>(initialTheme);
 
   // Sync theme between localStorage, cookie, and <html> class
