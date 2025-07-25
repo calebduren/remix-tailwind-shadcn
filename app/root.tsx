@@ -11,7 +11,7 @@ import {
 } from "@remix-run/react";
 import { json, type LoaderFunctionArgs , LinksFunction } from "@remix-run/node";
 import { useEffect, useState } from "react";
-import { parse as parseCookie } from "cookie";
+
 
 import "./tailwind.css"; // Import global Tailwind styles
 
@@ -23,6 +23,7 @@ export const links: LinksFunction = () => [
 // loader(): Runs on server before rendering. Used here to SSR the user's theme preference from cookies.
 // You can extend this loader to provide other global data to your app shell.
 export async function loader({ request }: LoaderFunctionArgs) {
+  const { parse: parseCookie } = await import("cookie");
   const cookieHeader = request.headers.get("Cookie") || "";
   const cookies = parseCookie(cookieHeader);
   // Only accept 'dark' or 'light' as valid
