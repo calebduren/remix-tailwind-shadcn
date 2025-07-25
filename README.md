@@ -4,6 +4,8 @@
 
 A modern starter template for building web apps with:
 
+---
+
 - [Remix](https://remix.run/) (React-based full stack framework)
 - [Tailwind CSS](https://tailwindcss.com/) (utility-first CSS)
 - [shadcn/ui](https://ui.shadcn.com/) (accessible, customizable React components)
@@ -26,6 +28,19 @@ A modern starter template for building web apps with:
    npm run dev
    ```
    The app will be available at [http://localhost:5173](http://localhost:5173).
+
+---
+
+## Netlify SSR Ready
+
+This template is pre-configured for **SSR deployment on Netlify** using the official [Remix Netlify adapter](https://remix.run/docs/en/main/deployment/netlify). All routes, loaders, and server-side features work out-of-the-box on Netlify—no extra setup required!
+
+- `@remix-run/netlify` is included as a dependency.
+- `server.js` and `remix.config.js` are set up for Netlify SSR.
+
+**Deploying elsewhere?**
+
+- You can adapt this template for other hosts by following the [Remix deployment docs](https://remix.run/docs/en/main/deployment). See comments in `remix.config.js` and `server.js` for guidance.
 
 ---
 
