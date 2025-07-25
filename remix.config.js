@@ -3,7 +3,7 @@ module.exports = {
   appDirectory: "app",
   assetsBuildDirectory: "public/build",
   publicPath: "/build/",
-  serverBuildDirectory: "build/server",
   serverBuildTarget: "netlify",
-  server: "./server.js",
+  serverModuleFormat: "cjs",
+  serverBuildDirectory: ".netlify/functions-internal",
 };
