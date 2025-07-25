@@ -22,17 +22,17 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="flex h-screen items-center">
-      <div className="flex flex-col gap-16 w-full max-w-md mx-auto">
+      <div className="flex flex-col gap-8 sm:gap-16 w-full max-w-md mx-auto p-4">
         <header className="flex flex-col gap-4 w-full">
-          <h1 className="leading text-4xl font-semibold text-foreground">
+          <h1 className="leading text-3xl sm:text-4xl font-semibold text-foreground text-balance">
             A Remix, Tailwind v4, and Shadcn Boilerplate
           </h1>
-          <p className="text-muted-foreground">
-            Use this boilerplate to get started with Remix, Tailwind v4.1.11,
-            Shadcn components, and Lucide icons.
+          <p className="text-muted-foreground text-pretty">
+            Use this boilerplate to get started with Remix v2.17.0, Tailwind
+            v4.1.11, Shadcn components, and Lucide icons.
           </p>
-          <p className="text-muted-foreground">
-            Supports light and dark theming out of the box.
+          <p className="text-muted-foreground text-pretty">
+            With light and dark theming out of the box.
           </p>
         </header>
         <div className="flex gap-2 flex-wrap">
@@ -84,7 +84,7 @@ export default function Index() {
             </Button>
           </Link>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           <Link
             to="https://github.com/calebduren/remix-tailwind-shadcn"
             target="_blank"
@@ -102,7 +102,7 @@ export default function Index() {
             rel="noreferrer"
             aria-label="Link to Caleb Durenberger GitHub profile"
           >
-            <Button variant="link">
+            <Button variant="outline" className="text-muted-foreground">
               By Caleb Durenberger
               <ArrowUpRight />
             </Button>
