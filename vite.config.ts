@@ -5,7 +5,8 @@
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from '@tailwindcss/vite';
+import { netlifyPlugin } from "@netlify/remix-adapter/plugin";
 
 // Extend Remix's type definitions for future flags (optional)
 declare module "@remix-run/node" {
@@ -29,5 +30,6 @@ export default defineConfig({
     }),
     tsconfigPaths(), // Allows using paths defined in tsconfig.json
     tailwindcss(),   // Enables Tailwind CSS support
+    netlifyPlugin()  // Netlify adapter plugin
   ],
 });
