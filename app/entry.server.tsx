@@ -13,23 +13,6 @@ import { RemixServer } from "@remix-run/react";
 import { renderToPipeableStream } from "react-dom/server";
 import { isbot } from "isbot";
 
-// This script runs before React hydration to set the dark class ASAP
-function getThemeScript() {
-  return `
-    (function() {
-      try {
-        var theme = localStorage.getItem('theme');
-        var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if(theme === 'dark' || (!theme && systemDark)) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      } catch (e) {}
-    })();
-  `;
-}
-
 const ABORT_DELAY = 5_000;
 
 export default function handleRequest(
