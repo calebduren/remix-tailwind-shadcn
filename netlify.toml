@@ -3,7 +3,9 @@
   # The build command for Remix
   command = "npm run build"
   # The directory to publish as the site root
-  publish = "build/client"
+  publish = "public"
+  # Functions directory
+  functions = ".netlify/functions"
 
 # Redirect all routes to the Remix SSR function
 [[redirects]]
