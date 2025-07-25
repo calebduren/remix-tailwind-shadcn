@@ -22,17 +22,7 @@ export const links: LinksFunction = () => [
 
 // loader(): Runs on server before rendering. Used here to SSR the user's theme preference from cookies.
 // You can extend this loader to provide other global data to your app shell.
-export async function loader({ request }: LoaderFunctionArgs) {
-  const { parse: parseCookie } = await import("cookie");
-  const cookieHeader = request.headers.get("Cookie") || "";
-  const cookies = parseCookie(cookieHeader);
-  // Only accept 'dark' or 'light' as valid
-  const initialTheme =
-    cookies.theme === "dark" || cookies.theme === "light"
-      ? cookies.theme
-      : null;
-  return json({ initialTheme });
-}
+export { loader } from "./root.loader";
 
 // ThemeScript: Injects a script that sets the initial theme (dark/light) before React hydration.
 // This prevents a flash of incorrect theme (FOUC) on first load.
