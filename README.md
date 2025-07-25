@@ -1,3 +1,5 @@
+<img width="1280" height="640" alt="boilerplate2" src="https://github.com/user-attachments/assets/d5b87a73-bafb-44d8-ae76-c72285ea511a" />
+
 # Remix + Tailwind + shadcn/ui Boilerplate
 
 A modern starter template for building web apps with:
