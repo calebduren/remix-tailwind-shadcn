@@ -70,7 +70,7 @@ export default function Index() {
             </Button>
           </Link>
           <Link to="https://github.com/calebduren" target="_blank">
-            <Button variant="secondary">
+            <Button variant="link">
               By Caleb Durenberger
               <ArrowUpRight />
             </Button>
