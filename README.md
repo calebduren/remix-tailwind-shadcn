@@ -33,14 +33,45 @@ A modern starter template for building web apps with:
 
 ## Netlify SSR Ready
 
-This template is pre-configured for **SSR deployment on Netlify** using the official [Remix Netlify adapter](https://remix.run/docs/en/main/deployment/netlify). All routes, loaders, and server-side features work out-of-the-box on Netlify—no extra setup required!
+This template is pre-configured for **SSR deployment on Netlify** using the official [@netlify/remix-adapter](https://github.com/netlify/remix-compute) for Remix v2. All routes, loaders, and server-side features work out-of-the-box on Netlify—no extra setup required!
 
-- `@remix-run/netlify` is included as a dependency.
-- `server.js` and `remix.config.js` are set up for Netlify SSR.
+### Netlify Configuration
+
+The template includes these key files for Netlify deployment:
+
+- **`netlify.toml`**: Configures build settings, function locations, and routing rules
+- **`netlify/functions/remix-server.js`**: Custom server function that handles SSR requests
+- **`vite.config.ts`**: Includes the Netlify adapter plugin for Remix
+
+### Deployment Steps
+
+1. Push your code to GitHub (or GitLab/Bitbucket)
+2. Connect your repository to Netlify
+3. Netlify will automatically detect the Remix configuration
+4. Your site will be built and deployed with SSR support
+
+### Key Dependencies
+
+- `@netlify/remix-adapter`: The official Remix v2 adapter for Netlify
+- `@netlify/functions`: Required for serverless function support
+
+### Troubleshooting Netlify Deployment
+
+If you encounter a 404 error after deploying to Netlify, check the following:
+
+1. **Build Output Directory**: Verify that `publish = "build/client"` in `netlify.toml` matches where Vite is generating your client assets
+
+2. **Functions Directory**: Ensure `directory = "netlify/functions"` in `netlify.toml` points to where your custom server function is located
+
+3. **Redirect Rule**: Confirm that the redirect in `netlify.toml` points to `/.netlify/functions/remix-server`
+
+4. **Function Name**: Make sure your function file is named `remix-server.js` in the `netlify/functions` directory
+
+5. **Deploy Logs**: Check Netlify deploy logs for any errors or mismatches in directory paths
 
 **Deploying elsewhere?**
 
-- You can adapt this template for other hosts by following the [Remix deployment docs](https://remix.run/docs/en/main/deployment). See comments in `remix.config.js` and `server.js` for guidance.
+- You can adapt this template for other hosts by following the [Remix deployment docs](https://remix.run/docs/en/main/deployment). You'll need to replace the Netlify adapter with the appropriate adapter for your hosting platform.
 
 ---
 
