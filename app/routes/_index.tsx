@@ -36,28 +36,48 @@ export default function Index() {
           </p>
         </header>
         <div className="flex gap-2 flex-wrap">
-          <Link to="https://remix.run" target="_blank">
+          <Link
+            to="https://remix.run"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Link to Remix website"
+          >
             <Button variant="outline">
               Remix framework
               <ArrowUpRight />
             </Button>
           </Link>
 
-          <Link to="https://tailwindcss.com" target="_blank">
+          <Link
+            to="https://tailwindcss.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Link to Tailwind CSS website"
+          >
             <Button variant="outline">
               Tailwind CSS
               <ArrowUpRight />
             </Button>
           </Link>
 
-          <Link to="https://ui.shadcn.com" target="_blank">
+          <Link
+            to="https://ui.shadcn.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Link to Shadcn UI website"
+          >
             <Button variant="outline">
               Shadcn UI components
               <ArrowUpRight />
             </Button>
           </Link>
 
-          <Link to="https://lucide.dev" target="_blank">
+          <Link
+            to="https://lucide.dev"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Link to Lucide icons website"
+          >
             <Button variant="outline">
               Lucide icons
               <ArrowUpRight />
@@ -68,13 +88,20 @@ export default function Index() {
           <Link
             to="https://github.com/calebduren/remix-tailwind-shadcn"
             target="_blank"
+            rel="noreferrer"
+            aria-label="Link to GitHub repository"
           >
             <Button>
               View this project on GitHub
               <ArrowUpRight />
             </Button>
           </Link>
-          <Link to="https://github.com/calebduren" target="_blank">
+          <Link
+            to="https://github.com/calebduren"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Link to Caleb Durenberger GitHub profile"
+          >
             <Button variant="link">
               By Caleb Durenberger
               <ArrowUpRight />

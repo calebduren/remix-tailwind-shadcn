@@ -9,11 +9,12 @@ import { PassThrough } from "node:stream";
 
 import type { AppLoadContext, EntryContext } from "@remix-run/node";
 import { createReadableStreamFromReadable } from "@remix-run/node";
-import { RemixServer, Meta, Links } from "@remix-run/react";
-import { renderToString } from "react-dom/server";
+import { RemixServer } from "@remix-run/react";
+import { renderToPipeableStream } from "react-dom/server";
+import { isbot } from "isbot";
 
+// This script runs before React hydration to set the dark class ASAP
 function getThemeScript() {
-  // This script runs before React hydration to set the dark class ASAP
   return `
     (function() {
       try {
@@ -28,9 +29,6 @@ function getThemeScript() {
     })();
   `;
 }
-
-import { isbot } from "isbot";
-import { renderToPipeableStream } from "react-dom/server";
 
 const ABORT_DELAY = 5_000;
 
@@ -69,10 +67,10 @@ function handleBotRequest(
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
       <RemixServer
-  context={remixContext}
-  url={request.url}
-  abortDelay={ABORT_DELAY}
-/>,
+        context={remixContext}
+        url={request.url}
+        abortDelay={ABORT_DELAY}
+      />,
       {
         onAllReady() {
           shellRendered = true;
@@ -119,10 +117,10 @@ function handleBrowserRequest(
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
       <RemixServer
-  context={remixContext}
-  url={request.url}
-  abortDelay={ABORT_DELAY}
-/>,
+        context={remixContext}
+        url={request.url}
+        abortDelay={ABORT_DELAY}
+      />,
       {
         onShellReady() {
           shellRendered = true;

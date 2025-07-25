@@ -9,10 +9,9 @@ import {
   ScrollRestoration, // Handles scroll position on navigation
   useLoaderData,   // Accesses loader data from server
 } from "@remix-run/react";
-import { json, type LoaderFunctionArgs } from "@remix-run/node";
+import { json, type LoaderFunctionArgs , LinksFunction } from "@remix-run/node";
 import { useEffect, useState } from "react";
 import { parse as parseCookie } from "cookie";
-import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css"; // Import global Tailwind styles
 
