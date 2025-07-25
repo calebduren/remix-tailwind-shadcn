@@ -22,7 +22,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="flex h-screen items-center">
-      <div className="flex flex-col gap-8 sm:gap-16 w-full max-w-md mx-auto p-4">
+      <div className="flex flex-col gap-8 sm:gap-16 w-full max-w-lg mx-auto p-4">
         <header className="flex flex-col gap-4 w-full">
           <h1 className="leading text-3xl sm:text-4xl font-semibold text-foreground text-balance">
             A Remix, Tailwind v4, and Shadcn Boilerplate
