@@ -64,8 +64,22 @@ export default function App() {
     }
     setTheme(t);
     document.documentElement.classList.toggle("dark", t === "dark");
-    // Set cookie for SSR hydration
     document.cookie = `theme=${t}; path=/; max-age=31536000`;
+
+    // Listen for system color scheme changes
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem("theme")) {
+        const newTheme = e.matches ? "dark" : "light";
+        setTheme(newTheme);
+        document.documentElement.classList.toggle("dark", newTheme === "dark");
+        document.cookie = `theme=${newTheme}; path=/; max-age=31536000`;
+      }
+    };
+    mq.addEventListener("change", handleChange);
+    return () => {
+      mq.removeEventListener("change", handleChange);
+    };
   }, []);
 
   return (
