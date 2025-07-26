@@ -2,13 +2,13 @@
 
 # Remix + Tailwind + shadcn/ui Boilerplate
 
-A modern starter template for building web apps with:
+Getting a Remix app working with Tailwind v4 can be a pain. This boilerplate lets you skip the hassle and start building.
 
----
+This boilerplate comes with with:
 
-- [Remix](https://remix.run/) (React-based full stack framework)
-- [Tailwind CSS](https://tailwindcss.com/) (utility-first CSS)
-- [shadcn/ui](https://ui.shadcn.com/) (accessible, customizable React components)
+- [Remix v2.17.0](https://remix.run/) (React-based full stack framework)
+- [Tailwind v4.1.11](https://tailwindcss.com/) (utility-first CSS)
+- [All Shadcn components](https://ui.shadcn.com/) (accessible, customizable React components)
 - [Lucide icons](https://lucide.dev/) (icon set)
 - [Vite](https://vitejs.dev/) (fast dev/build tool)
 
