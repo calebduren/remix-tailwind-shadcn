@@ -45,10 +45,16 @@ The template includes these key files for Netlify deployment:
 
 ### Deployment Steps
 
-1. Push your code to GitHub (or GitLab/Bitbucket)
+1. Push your code to GitHub
 2. Connect your repository to Netlify
 3. Netlify will automatically detect the Remix configuration
 4. Your site will be built and deployed with SSR support
+
+### Build settings
+
+- Base directory: `/`
+- Build command: `npm run build`
+- Functions directory: `.netlify/functions`
 
 ### Key Dependencies
 
